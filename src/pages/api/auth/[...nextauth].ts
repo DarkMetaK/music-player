@@ -6,7 +6,6 @@ import { spotifyApi, LOGIN_URL } from '@/lib/spotify'
 
 async function refreshAccessToken(token: JWT): Promise<JWT> {
   try {
-
     spotifyApi.setAccessToken(token.accessToken);
     spotifyApi.setRefreshToken(token.refreshToken);
 
@@ -29,22 +28,22 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
   }
 }
 
-export const authOptions = {
-  // Configure one or more authentication providers
-  providers: [
+export default NextAuth({
+ // Configure one or more authentication providers
+ providers: [
     SpotifyProvider({
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       authorization: LOGIN_URL
     },),
-    // ...add more providers here
+  // ...add more providers here
   ],
   secret: process.env.JWT_SECRET,
   pages: {
     signIn: '/login'
   },
   callbacks: {
-    async jwt({ token, account, user }: {token: JWT, account: Account, user: User}): Promise<JWT> {
+    async jwt({ token, account, user }): Promise<JWT> {
       // initial sign-in
       if (account && user) {
         return {
@@ -73,6 +72,4 @@ export const authOptions = {
       return session
     }
   }
-}
-
-export default NextAuth(authOptions)
+})
