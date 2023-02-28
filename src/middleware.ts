@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function middleware(req: NextRequest) {
 
   // Token will exist if user is logged in
-  const token = await getToken({ req, secret: process.env.JWT_SECRET });
+  const token = await getToken({ req, secret: process.env.NEXT_PUBLIC_SECRET });
 
   // Redirec to login if they dont have token AND are requesting a protected route
   if (!token) {
