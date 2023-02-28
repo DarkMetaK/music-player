@@ -1,4 +1,4 @@
-import NextAuth, { Account, Session, User } from 'next-auth'
+import NextAuth, { Session } from 'next-auth'
 import { JWT } from 'next-auth/jwt';
 import SpotifyProvider from 'next-auth/providers/spotify'
 
@@ -38,7 +38,7 @@ export default NextAuth({
     },),
   // ...add more providers here
   ],
-  secret: process.env.JWT_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/login'
   },
