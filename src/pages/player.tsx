@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect } from 'react';
 import Head from 'next/head';
 
 import { GiPreviousButton, GiNextButton } from 'react-icons/gi'
@@ -14,6 +14,7 @@ import {
 
 import { playerContext } from '@/context/player';
 import PlayerSongInfo from '@/components/PlayerSongInfo';
+import ProgressBar from '@/components/ProgressBar';
 
 export default function Player() {
   const { 
@@ -124,8 +125,8 @@ export default function Player() {
             <div>
               <ProgressContainer>
                 <span>0:00</span>
-                <input type="range" disabled/>
-                <span>0:30</span>                
+                <ProgressBar />
+                <span>0:29</span>                
               </ProgressContainer>
               <ButtonsContainer>
                 <button onClick={handlePreviousSong}>
