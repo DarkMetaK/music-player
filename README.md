@@ -36,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre
 
-<a href="https://github.com/DarkMetaK/music-player">
+<a href="https://darkmetak-music.vercel.app/">
     <img src="./public/template.gif" alt="Product Name Screen Shot" width=100%>
 </a>
 
