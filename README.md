@@ -37,7 +37,7 @@
 ## Sobre
 
 <a href="https://github.com/DarkMetaK/music-player">
-    <img src="./assets/template.jpg" alt="Product Name Screen Shot" width=100%>
+    <img src="./public/template.gif" alt="Product Name Screen Shot" width=100%>
 </a>
 
 O projeto é um player de música, desenvolvido com React e integrado ao Spotify com node. Ele lista as suas playlists, músicas favoritas e algumas recomendações, e é capaz de reproduzir as demonstrações de 30 segundos disponibilizadas pelo Spotify. Para sua construção foi utilizado o framework Next.JS, para que fosse possível aplicar proteção de rotas através do middleware. Além disso, outros conceitos como contexto, hooks personalizados e autenticação foram aplicados. Para a parte de autenticação foi utilizado o NextAuth, e como forma de facilitar as requisições para a api do Spotify, foi aplicado a biblioteca Spotify Web Api Node.
